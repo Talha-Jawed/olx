@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Submit an Ad</title>
+    <link rel="icon" href="./img/logo-olx.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fontawesome-all.js"></script>
+    <script src="./js/sweetalert2.all.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAt62kFXbK6qucMtjaWziT1AIVQWaCneGc",
+            authDomain: "fir-abcb2.firebaseapp.com",
+            databaseURL: "https://fir-abcb2.firebaseio.com",
+            projectId: "fir-abcb2",
+            storageBucket: "fir-abcb2.appspot.com",
+            messagingSenderId: "177768663084"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body>
+    <div id="main-container" class="main-container">
+        <div class="flex-box">
+            <div>
+
+                <select name="catag" id="catag" class="input-fields">
+                    <option value="">Select Category</option>
+                    <option value="MOBILE">MOBILE</option>
+                    <option value="LAPTOP">LAPTOP</option>
+                    <option value="CAR">CAR</option>
+                    <option value="BIKE">BIKE</option>
+                    <option value="PROPERTY">PROPERTY</option>
+                </select>
+            </div>
+            
+            <div>
+                <!-- <form action="Javascript:void(0)" onsubmit=""> -->
+
+                    <label class="input-fields"> Name: 
+                        <input type="text" name="name" id="pName" onkeyup="nameSub()">
+                        <span id="nameErr"></span>
+                    </label>
+                    <label class="input-fields"> Price :
+                        <input type="text" name="price" id="price" onkeyup="price()">
+                        <span id="prErr"></span>
+                    </label>
+                    <label class="input-fields">Phone#: 
+                        <input type="text" name="num" id="phone" onkeyup="phone()">
+                        <span id="phErr"></span>
+                    </label>
+                    <label class="input-fields">Photos:
+                        <input type="file" id="file" accept="image/*" onchange="previewFile()">
+                        <span id="file"></span>
+                    </label>
+                    <label class="input-fields">Model:
+                        <input type="text" id="model" name="model" onkeyup="model()">
+                        <span id="moErr"></span>
+                    </label>
+                    <label class="input-fields">Address:
+                        <input type="text" id="address" name="address">
+                    </label>
+                    <label class="input-fields">
+                        <textarea name="Discription" id="Discription" placeholder="Discription" cols="30" rows="10"></textarea>
+                    </label>
+                    <button class="button" onClick="savetoDB()" >submit</button>
+                    <!-- <input type="submit" onclick="post()" value="submit"> -->
+                <!-- </form> -->
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>

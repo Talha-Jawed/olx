@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="olx">
+    <link rel="apple-touch-icon" href="./img/logo-olx.png">
+    <title>Home</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./img/logo-olx.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/fontawesome-all.js"></script>
+    <script src="./js/sweetalert2.all.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAt62kFXbK6qucMtjaWziT1AIVQWaCneGc",
+            authDomain: "fir-abcb2.firebaseapp.com",
+            databaseURL: "https://fir-abcb2.firebaseio.com",
+            projectId: "fir-abcb2",
+            storageBucket: "fir-abcb2.appspot.com",
+            messagingSenderId: "177768663084"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body onload="out(),userAuth()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8 text-left">
+
+                <a href="./index.html">
+                    <img src="./img/logo.png" width="300" id="logo" alt="logo">
+                </a> 
+            </div>
+            <div class="col-md-4 , imageDiv">
+                <button class="button" onclick="favorite()" id="favorite">Favorite</button>
+                <button class="button" onclick="logOut()" id="logOut">Log Out</button>
+                <button class="button" onclick="logInn()" id="LogIn">LogIn</button>
+                <button class="btn btn-warning" id="submitAnAd" onclick="upload()"><b>Submit an Ad</b></button>
+            </div>
+        </div>
+    </div>
+    <!-- <div> -->
+    <div class="flex-box" id="sDiv">
+        <div class="col-md-12 text-center ">
+            <div>
+
+                <select name="catag" id="catag" >
+                    <option >Category</option>
+                    <option value="MOBILE">MOBILE</option>
+                    <option value="LAPTOP">LAPTOP</option>
+                    <option value="CAR">CAR</option>
+                    <option value="BIKE">BIKE</option>
+                    <option value="PROPERTY">PROPERTY</option>
+                </select>
+            </div>
+            <label class="input-fields">
+                    <input type="search" id="search" placeholder="Search By Name">
+                    <button type="button"  onclick="search()" class="btn btn-outline-info">Search</button>
+                    <button type="button" id="adsBtn" class="btn btn-primary" onclick="myAds()">My Ads</button>
+            </label>
+        </div>
+    </div>
+    <div id="fech">
+
+    </div>
+    <!-- </div> -->
+    <!-- Footer -->
+<footer class="page-footer font-small blue pt-4 mt-4" id="foter">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase container-fluid"></h5>
+          <!-- <p>Here you can use rows and columns here to organize your footer content.</p> -->
+        <img src="./img/logo-olx.png" alt="logo" height="100px" width="100px">
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <!-- <h5 class="text-uppercase">Links</h5> -->
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Term of Use</a>
+              </li>
+              <li>
+                <a href="#!">Happy OLXers</a>
+              </li>
+              <li>
+                <a href="#!">Term Of Use</a>
+              </li>
+              <li>
+                <a href="#!">Sitemap</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Contact US</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                 <p> help@Olx.com.pk </p>
+              </li>
+              <li>
+                <p>080010101</p>
+              </li>
+              <li>
+                <p>Business Package</p>
+              </li>
+              
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <!-- <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
+    </div> -->
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

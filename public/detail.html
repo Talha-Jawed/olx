@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detail</title>
+    <link rel="icon" href="./img/logo-olx.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fontawesome-all.js"></script>
+    <script src="./js/sweetalert2.all.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAt62kFXbK6qucMtjaWziT1AIVQWaCneGc",
+            authDomain: "fir-abcb2.firebaseapp.com",
+            databaseURL: "https://fir-abcb2.firebaseio.com",
+            projectId: "fir-abcb2",
+            storageBucket: "fir-abcb2.appspot.com",
+            messagingSenderId: "177768663084"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body onload="detaill() , nameForDom()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8 text-left">
+
+                <a href="./index.html">
+                    <img src="./img/logo.png" width="300" id="logo" alt="logo">
+                </a>
+            </div>
+            <div class="col-md-4 , dtalBtn">
+                <button type="button" id="adsBtn" class="btn btn-primary" onclick="myAds()">My Account</button>
+                <button class="btn btn-warning" id="submitAnAd" onclick="upload()">Submit an Ad</button>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="fech" class="fetchDetail">
+    </div>
+    <!-- <div id="chatApp"></div> -->
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

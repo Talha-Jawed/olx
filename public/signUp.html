@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>signup</title>
+    <link rel="icon" href="./img/logo-olx.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fontawesome-all.js"></script>
+    <script src="./js/sweetalert2.all.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAt62kFXbK6qucMtjaWziT1AIVQWaCneGc",
+            authDomain: "fir-abcb2.firebaseapp.com",
+            databaseURL: "https://fir-abcb2.firebaseio.com",
+            projectId: "fir-abcb2",
+            storageBucket: "fir-abcb2.appspot.com",
+            messagingSenderId: "177768663084"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body onload="btnValidate()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-8 text-left">
+
+                <a href="./index.html">
+                    <img src="./img/logo.png" width="300" id="logo" alt="logo">
+                </a>
+            </div>
+            <div class="col-md-4 , imageDiv">
+                <button class="button" onclick="btnLogIn()">LogIn</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div id="main-container" class="main-container">
+        <div class="flex-box">
+            <h2 class="input-fields">Sign Up Here</h2>
+            <label class="input-fields"> Email :
+                <input type="email" name="email" id="email" onkeyup="emailValidate()" />
+                <span id="errEmail"></span>
+            </label>
+            <label class="input-fields">Password:
+                <input type="password" name="password" id="password" onkeyup="passValidate()" />
+                <span id="errPass"></span>
+            </label>
+            <label class="input-fields">Username:
+                <input type="text" name="username" id="username" onkeyup="nameValidate()" />
+                <span id="errName"></span>
+            </label>
+            <label>Gender:
+
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+
+            </label>
+            <br>
+            <label>
+
+                <button onClick="signup()" class="button">Sign Up</button>
+
+            </label>
+            <div id="error"></div>
+        </div>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
